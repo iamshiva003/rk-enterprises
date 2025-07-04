@@ -6,7 +6,7 @@ function App() {
   return (
       <>
         <img src={logo} alt="RK Enterprises logo"/>
-        <h1>RK Enterprises</h1>
+        <h1>RK-Enterprises</h1>
       </>
   )
 }
