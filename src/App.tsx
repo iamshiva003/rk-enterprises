@@ -8,7 +8,7 @@ function App() {
       <>
         <div className="App">
           <img src={logo} alt="RK Enterprises logo"/>
-          <h1>RK Enterprises</h1>
+          <h1>RK ENTERPRISES</h1>
         </div>
 
         <WhatsApp />
