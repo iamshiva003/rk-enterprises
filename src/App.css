@@ -4,3 +4,35 @@
   padding: 2rem;
   text-align: center;
 }
+.contact-buttons {
+  display: flex;
+  gap: 1rem;
+  margin-top: 2rem;
+  justify-content: center;
+}
+
+.whatsapp-btn {
+  background-color: #25D366;
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  font-size: 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.call-btn {
+  background-color: #007BFF;
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  font-size: 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.logo {
+  display: block;
+  margin: 0 auto;
+  max-width: 150px;
+}

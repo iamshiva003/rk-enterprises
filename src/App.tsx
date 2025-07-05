@@ -1,20 +1,15 @@
-import logo from './assets/logo/logo.png'
-import './App.css'
-import WhatsApp from "./services/WhatsApp.tsx";
+import './App.css';
+import logo from './assets/logo/logo.png';
+import FloatingContact from './components/FloatingContact';
 
 function App() {
-
-  return (
-      <>
-        <div className="App">
-          <img src={logo} alt="RK Enterprises logo"/>
-          <h1>RK Enterprises</h1>
+    return (
+        <div className="app-wrapper">
+            <img src={logo} alt="RK Enterprises logo" className="logo" />
+            <h1 className="title">RK-Enterprises</h1>
+            <FloatingContact />
         </div>
-
-        <WhatsApp />
-      </>
-  )
+    );
 }
 
-
-export default App
+export default App;
