@@ -6,7 +6,7 @@ function App() {
     return (
         <div className="app-wrapper">
             <img src={logo} alt="RK Enterprises logo" className="logo" />
-            <h1 className="title">RK Enterprises</h1>
+            <h1 className="title">RK-Enterprises</h1>
             <FloatingContact />
         </div>
     );
