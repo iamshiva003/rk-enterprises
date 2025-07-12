@@ -5,7 +5,7 @@ on:
     branches:
       - master
 
-  workflow_dispatch:  # Optional: allows manual deploy from Actions tab
+  workflow_dispatch:
 
 jobs:
   deploy-only:
