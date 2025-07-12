@@ -1,33 +1,37 @@
-name: Build and Deploy to GitHub Pages
+name: Deploy to GitHub Pages
 
 on:
+
   push:
+
     branches:
+
       - master
 
-  workflow_dispatch:
+  workflow_dispatch:  # Optional: allows manual deploy from Actions tab
 
 jobs:
-  build-and-deploy:
+
+  deploy-only:
+
     runs-on: ubuntu-latest
 
     steps:
+
       - name: 📥 Checkout Repository
+
         uses: actions/checkout@v4
 
-      - name: 🔧 Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: 18
-
-      - name: 🏗️ Build Project
-        run: npm run build
-
       - name: 📝 Add CNAME for Custom Domain
+
         run: echo 'rkenterprisesblr.com' > dist/CNAME
 
       - name: 🚀 Deploy to GitHub Pages
+
         uses: peaceiris/actions-gh-pages@v4
+
         with:
+
           github_token: ${{ secrets.GITHUB_TOKEN }}
+
           publish_dir: ./dist
