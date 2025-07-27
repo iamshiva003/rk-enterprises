@@ -3,23 +3,36 @@ import { FaWhatsapp } from 'react-icons/fa';
 import { CONTACT_INFO } from '../config/contact';
 import './FloatingContact.css'; // reuse styles
 
-const WhatsAppComponent: React.FC = () => {
-    const [showOptions, setShowOptions] = useState(false);
-    const [selectedService, setSelectedService] = useState('General Inquiry');
+interface ServiceOption {
+    value: string;
+    label: string;
+}
+
+const serviceOptions: ServiceOption[] = [
+    { value: 'General Inquiry', label: 'General Inquiry' },
+    { value: 'Product Inquiry', label: 'Product Inquiry' },
+    { value: 'Consulting Services', label: 'Consulting Services' },
+    { value: 'Support Request', label: 'Support Request' },
+    { value: 'Custom Order', label: 'Custom Order' }
+];
+
+const WhatsAppComponent: React.FC = (): React.JSX.Element => {
+    const [showOptions, setShowOptions] = useState<boolean>(false);
+    const [selectedService, setSelectedService] = useState<string>('General Inquiry');
     const dropdownRef = useRef<HTMLDivElement | null>(null);
 
-    const toggleDropdown = () => setShowOptions((prev) => !prev);
+    const toggleDropdown = (): void => setShowOptions((prev: boolean) => !prev);
 
-    const handleChat = () => {
-        const message = `Hi, I am interested in your "${selectedService}" service. Please assist me.`;
-        const url = `https://wa.me/${CONTACT_INFO.phoneNumber}?text=${encodeURIComponent(message)}`;
+    const handleChat = (): void => {
+        const message: string = `Hi, I am interested in your "${selectedService}" service. Please assist me.`;
+        const url: string = `https://wa.me/${CONTACT_INFO.phoneNumber}?text=${encodeURIComponent(message)}`;
         window.open(url, '_blank');
         setShowOptions(false);
     };
 
     // Close on outside click
-    useEffect(() => {
-        const handleClickOutside = (e: MouseEvent) => {
+    useEffect((): (() => void) => {
+        const handleClickOutside = (e: MouseEvent): void => {
             if (dropdownRef.current && !dropdownRef.current.contains(e.target as Node)) {
                 setShowOptions(false);
             }
@@ -27,10 +40,14 @@ const WhatsAppComponent: React.FC = () => {
         if (showOptions) {
             document.addEventListener('mousedown', handleClickOutside);
         }
-        return () => {
+        return (): void => {
             document.removeEventListener('mousedown', handleClickOutside);
         };
     }, [showOptions]);
+
+    const handleServiceChange = (e: React.ChangeEvent<HTMLSelectElement>): void => {
+        setSelectedService(e.target.value);
+    };
 
     return (
         <div ref={dropdownRef}>
@@ -38,6 +55,7 @@ const WhatsAppComponent: React.FC = () => {
                 className="icon-button whatsapp"
                 onClick={toggleDropdown}
                 title="Chat on WhatsApp"
+                type="button"
             >
                 <FaWhatsapp size={24} />
             </button>
@@ -47,15 +65,15 @@ const WhatsAppComponent: React.FC = () => {
                     <select
                         className="service-select"
                         value={selectedService}
-                        onChange={(e) => setSelectedService(e.target.value)}
+                        onChange={handleServiceChange}
                     >
-                        <option>General Inquiry</option>
-                        <option>Product Inquiry</option>
-                        <option>Consulting Services</option>
-                        <option>Support Request</option>
-                        <option>Custom Order</option>
+                        {serviceOptions.map((option: ServiceOption) => (
+                            <option key={option.value} value={option.value}>
+                                {option.label}
+                            </option>
+                        ))}
                     </select>
-                    <button className="start-chat" onClick={handleChat}>
+                    <button className="start-chat" onClick={handleChat} type="button">
                         Start Chat
                     </button>
                 </div>
