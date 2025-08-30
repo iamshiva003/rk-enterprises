@@ -29,6 +29,10 @@
     margin: 0 auto 100px auto;
 }
 
+.products-section .section-title {
+    color: #333 !important;
+}
+
 .products-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -91,6 +95,10 @@
 .testimonials-section {
     max-width: 1200px;
     margin: 0 auto;
+}
+
+.testimonials-section .section-title {
+    color: #333 !important;
 }
 
 .testimonials-grid {
