@@ -2,6 +2,7 @@ import './App.css';
 import Header from './components/Header';
 import Hero from './components/Hero';
 import ImageSection from './components/ImageSection';
+import FeaturesServices from './components/FeaturesServices';
 import FloatingContact from './components/FloatingContact';
 
 function App() {
@@ -10,6 +11,7 @@ function App() {
             <Header />
             <Hero />
             <ImageSection />
+            <FeaturesServices />
             <FloatingContact />
         </div>
     );
