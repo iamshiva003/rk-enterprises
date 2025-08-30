@@ -1,12 +1,21 @@
 import './App.css';
-import logo from './assets/logo/logo.png';
+import Header from './components/Header';
+import Hero from './components/Hero';
+import ImageSection from './components/ImageSection';
+import FeaturesServices from './components/FeaturesServices';
+import ProductsTestimonials from './components/ProductsTestimonials';
+import Footer from './components/Footer';
 import FloatingContact from './components/FloatingContact';
 
 function App() {
     return (
         <div className="app-wrapper">
-            <img src={logo} alt="RK Enterprises logo" className="logo" />
-            <h1 className="title">RK-Enterprises</h1>
+            <Header />
+            <Hero />
+            <ImageSection />
+            <FeaturesServices />
+            <ProductsTestimonials />
+            <Footer />
             <FloatingContact />
         </div>
     );
