@@ -4,6 +4,7 @@ import Hero from './components/Hero';
 import ImageSection from './components/ImageSection';
 import FeaturesServices from './components/FeaturesServices';
 import ProductsTestimonials from './components/ProductsTestimonials';
+import Footer from './components/Footer';
 import FloatingContact from './components/FloatingContact';
 
 function App() {
@@ -14,6 +15,7 @@ function App() {
             <ImageSection />
             <FeaturesServices />
             <ProductsTestimonials />
+            <Footer />
             <FloatingContact />
         </div>
     );
