@@ -113,12 +113,15 @@
 }
 
 .quote-icon {
-    font-size: 4rem;
-    color: white;
-    font-family: 'Georgia', serif;
-    font-weight: bold;
-    line-height: 1;
     margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+}
+
+.quote-icon svg {
+    width: 24px;
+    height: 18px;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
 }
 
 .testimonial-text {
@@ -207,8 +210,9 @@
         min-height: 250px;
     }
     
-    .quote-icon {
-        font-size: 3rem;
+    .quote-icon svg {
+        width: 20px;
+        height: 15px;
     }
 }
 
@@ -236,8 +240,9 @@
         min-height: 220px;
     }
     
-    .quote-icon {
-        font-size: 2.5rem;
+    .quote-icon svg {
+        width: 18px;
+        height: 14px;
     }
     
     .testimonial-text {
