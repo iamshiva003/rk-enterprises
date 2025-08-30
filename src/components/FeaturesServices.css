@@ -36,10 +36,14 @@
 
 .feature-panel {
     background-color: #3a3a3a;
-    padding: 30px 20px;
-    border-radius: 12px;
+    padding: 40px 30px;
+    border-radius: 8px;
     text-align: center;
     transition: transform 0.3s ease;
+    min-height: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 .feature-panel:hover {
@@ -252,11 +256,16 @@
     }
     
     .features-grid {
-        gap: 20px;
+        grid-template-columns: 1fr;
+        gap: 25px;
+        max-width: 600px;
+        margin-left: auto;
+        margin-right: auto;
     }
     
     .feature-panel {
-        padding: 20px 15px;
+        padding: 30px 25px;
+        min-height: 250px;
     }
     
     .feature-title {
@@ -287,11 +296,14 @@
     }
     
     .features-grid {
-        gap: 15px;
+        grid-template-columns: 1fr;
+        gap: 20px;
+        max-width: 500px;
     }
     
     .feature-panel {
-        padding: 15px 12px;
+        padding: 20px 18px;
+        min-height: 220px;
     }
     
     .feature-icon {
@@ -302,7 +314,7 @@
     .purification-cycle-icon,
     .molecular-icon {
         width: 50px;
-        height: 50px;
+    height: 50px;
     }
     
     .test-tube-icon {
@@ -326,11 +338,14 @@
     }
     
     .features-grid {
-        gap: 12px;
+        grid-template-columns: 1fr;
+        gap: 18px;
+        max-width: 400px;
     }
     
     .feature-panel {
-        padding: 12px 10px;
+        padding: 15px 12px;
+        min-height: 200px;
     }
     
     .feature-title {
