@@ -27,7 +27,7 @@
     text-transform: uppercase;
     margin-bottom: 20px;
     color: white;
-    font-family: 'Badger Valley', 'Arial', sans-serif;
+    font-family: 'Arial', sans-serif;
 }
 
 .copyright-info {
@@ -38,7 +38,7 @@
     margin: 0 0 8px 0;
     font-size: 0.9rem;
     color: #e0e0e0;
-    font-family: 'Badger Valley', 'Arial', sans-serif;
+    font-family: 'Arial', sans-serif;
     line-height: 1.4;
 }
 
@@ -72,7 +72,7 @@
     font-weight: 600;
     color: white;
     margin-bottom: 20px;
-    font-family: 'Badger Valley', 'Arial', sans-serif;
+    font-family: 'Arial', sans-serif;
     text-transform: none;
 }
 
@@ -93,7 +93,7 @@
     font-size: 0.9rem;
     font-weight: 400;
     text-transform: uppercase;
-    font-family: 'Badger Valley', 'Arial', sans-serif;
+    font-family: 'Arial', sans-serif;
     transition: color 0.3s ease;
     letter-spacing: 0.5px;
 }
