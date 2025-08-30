@@ -1,9 +1,234 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+/* Reset and base styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+  background-color: white;
+  color: black;
+}
+
+#root {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.app-wrapper {
+  width: 100%;
+  min-height: 100vh;
+}
+
+/* Header Styles */
+.header {
+  background-color: white;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  padding: 1rem 0;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.header-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  font-weight: 700;
+  font-size: 1.5rem;
+  color: black;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+}
+
+.navigation {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+}
+
+.nav-link {
+  text-decoration: none;
+  color: black;
+  font-size: 1rem;
+  font-weight: 400;
+  transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+  color: #666;
+}
+
+.contact-btn {
+  background-color: white;
+  border: 1px solid black;
+  color: black;
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  font-weight: 400;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+}
+
+.contact-btn:hover {
+  background-color: black;
+  color: white;
+}
+
+/* Hero Section */
+.hero {
+  padding: 4rem 2rem;
+  text-align: center;
+  background-color: white;
+}
+
+.hero-content {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.hero-headline {
+  font-size: 3.5rem;
+  font-weight: 400;
+  color: black;
+  line-height: 1.2;
+  margin-bottom: 1.5rem;
+  font-family: Georgia, 'Times New Roman', serif;
+}
+
+.hero-tagline {
+  font-size: 1.25rem;
+  color: black;
+  font-weight: 400;
+  line-height: 1.6;
+  max-width: 600px;
+  margin: 0 auto;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+}
+
+/* Image Section */
+.image-section {
+  padding: 4rem 2rem;
+  background-color: white;
+}
+
+.image-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  height: 300px;
+}
+
+.image-wrapper {
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.image-wrapper:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+}
+
+.water-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.left-image {
+  width: 280px;
+  height: 200px;
+  z-index: 1;
+  margin-right: -2rem;
+  transform: rotate(-2deg);
+}
+
+.middle-image {
+  width: 320px;
+  height: 240px;
+  z-index: 3;
+  transform: rotate(1deg);
+}
+
+.right-image {
+  width: 280px;
+  height: 200px;
+  z-index: 1;
+  margin-left: -2rem;
+  transform: rotate(2deg);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .header-content {
+    padding: 0 1rem;
+  }
+  
+  .navigation {
+    gap: 1rem;
+  }
+  
+  .hero-headline {
+    font-size: 2.5rem;
+  }
+  
+  .hero-tagline {
+    font-size: 1.1rem;
+  }
+  
+  .image-container {
+    flex-direction: column;
+    gap: 1rem;
+    height: auto;
+  }
+  
+  .left-image,
+  .middle-image,
+  .right-image {
+    width: 100%;
+    max-width: 320px;
+    height: 200px;
+    margin: 0;
+    transform: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .header-content {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .navigation {
+    order: 3;
+  }
+  
+  .hero-headline {
+    font-size: 2rem;
+  }
+  
+  .hero-tagline {
+    font-size: 1rem;
+  }
+}
+
+/* Existing contact button styles */
 .contact-buttons {
   display: flex;
   gap: 1rem;
@@ -29,10 +254,4 @@
   font-size: 1rem;
   border-radius: 8px;
   cursor: pointer;
-}
-
-.logo {
-  display: block;
-  margin: 0 auto;
-  max-width: 150px;
 }
