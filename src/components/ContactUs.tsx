@@ -22,7 +22,7 @@ const ContactUs = () => {
                             </div>
                             <div className="info-content">
                                 <h3>Address :</h3>
-                                <p>Head Office: 8th floor, Head office, JMD MEGAPOLIS, Unit No 831, Sector 48, Bangalore 560002</p>
+                                <p>#407, 3rd cross, janatha colony, Marathahalli Sarjapur Road, doddakannalli Near anjaneya swamy temple Bangalore-560035</p>
                             </div>
                         </div>
                         
@@ -46,7 +46,7 @@ const ContactUs = () => {
                             </div>
                             <div className="info-content">
                                 <h3>Business Phone Number :</h3>
-                                <p>+91-1928298383</p>
+                                <p>+91-9945755410</p>
                                 <p>+91-1928298383</p>
                             </div>
                         </div>
