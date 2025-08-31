@@ -1,4 +1,5 @@
 import React from 'react';
+import { DotLottieReact } from '@lottiefiles/dotlottie-react';
 import './Hero.css';
 
 const Hero: React.FC = () => {
@@ -19,14 +20,14 @@ const Hero: React.FC = () => {
                     </button>
                 </div>
                 
-                {/* Right Section - Water Glass Visual */}
+                {/* Right Section - Lottie Animation */}
                 <div className="hero-visual-section">
-                    <div className="water-glass-container">
-                        <div className="water-glass">
-                            <div className="water-fill"></div>
-                            <div className="water-pour"></div>
-                            <div className="water-splash"></div>
-                        </div>
+                    <div className="lottie-container">
+                        <DotLottieReact
+                            src="https://lottie.host/f7d47d74-866b-4e4d-9c13-7150c99bd67b/CFdys3OgMG.lottie"
+                            loop
+                            autoplay
+                        />
                     </div>
                 </div>
             </div>

@@ -21,6 +21,8 @@
     display: flex;
     flex-direction: column;
     gap: 30px;
+    align-items: center;
+    text-align: center;
 }
 
 .hero-headline {
@@ -52,10 +54,11 @@
     cursor: pointer;
     transition: all 0.3s ease;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
-    align-self: flex-start;
-    margin-left: 25%;
+    align-self: center;
+    margin: 0 auto;
     box-shadow: 0 3px 15px rgba(0, 0, 0, 0.2);
     border: 2px solid #333;
+    width: fit-content;
 }
 
 .hero-cta-button:hover {
@@ -76,7 +79,7 @@
     border-color: #333;
 }
 
-/* Right Section - Water Glass Visual */
+/* Right Section - Lottie Animation */
 .hero-visual-section {
     display: flex;
     justify-content: center;
@@ -84,72 +87,18 @@
     position: relative;
 }
 
-.water-glass-container {
+.lottie-container {
     position: relative;
-    width: 300px;
-    height: 400px;
+    width: 400px;
+    height: 500px;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.water-glass {
-    width: 120px;
-    height: 200px;
-    border: 3px solid #e0e0e0;
-    border-radius: 0 0 60px 60px;
-    position: relative;
-    background: linear-gradient(135deg, rgba(255, 255, 255, 0.9), rgba(240, 248, 255, 0.8));
-    overflow: hidden;
-}
-
-.water-fill {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 70%;
-    background: linear-gradient(135deg, #87ceeb, #b0e0e6);
-    border-radius: 0 0 60px 60px;
-    animation: waterRipple 3s ease-in-out infinite;
-}
-
-.water-pour {
-    position: absolute;
-    top: -20px;
-    right: -10px;
-    width: 20px;
-    height: 40px;
-    background: linear-gradient(135deg, #87ceeb, #b0e0e6);
-    border-radius: 0 0 10px 10px;
-    animation: waterPour 2s ease-in-out infinite;
-}
-
-.water-splash {
-    position: absolute;
-    top: 10px;
-    right: 15px;
-    width: 15px;
-    height: 15px;
-    background: radial-gradient(circle, #87ceeb 30%, transparent 70%);
-    border-radius: 50%;
-    animation: waterSplash 2.5s ease-in-out infinite;
-}
-
-/* Water Animations */
-@keyframes waterRipple {
-    0%, 100% { transform: scaleY(1); }
-    50% { transform: scaleY(1.05); }
-}
-
-@keyframes waterPour {
-    0%, 100% { transform: translateY(0) scaleY(1); }
-    50% { transform: translateY(5px) scaleY(1.1); }
-}
-
-@keyframes waterSplash {
-    0%, 100% { opacity: 0.7; transform: scale(1); }
-    50% { opacity: 1; transform: scale(1.2); }
+.lottie-container > div {
+    width: 100% !important;
+    height: 100% !important;
 }
 
 /* Responsive Design */
@@ -162,9 +111,9 @@
         font-size: 3rem;
     }
     
-    .water-glass-container {
-        width: 250px;
-        height: 350px;
+    .lottie-container {
+        width: 400px;
+        height: 500px;
     }
 }
 
@@ -184,11 +133,15 @@
     .hero-text-section {
         order: 1;
         gap: 25px;
+        align-items: center;
+        text-align: center;
     }
     
     .hero-visual-section {
         order: 2;
         margin-top: 20px;
+        display: flex;
+        justify-content: center;
     }
     
     .hero-headline {
@@ -203,13 +156,14 @@
     
     .hero-cta-button {
         align-self: center;
-        margin-left: 0;
+        margin: 0 auto;
         width: fit-content;
     }
     
-    .water-glass-container {
-        width: 200px;
-        height: 300px;
+    .lottie-container {
+        width: 350px;
+        height: 450px;
+        margin: 0 auto;
     }
 }
 
@@ -225,6 +179,8 @@
     
     .hero-text-section {
         gap: 20px;
+        align-items: center;
+        text-align: center;
     }
     
     .hero-headline {
@@ -243,12 +199,13 @@
         padding: 12px 25px;
         font-size: 1rem;
         align-self: center;
-        margin-left: 0;
+        margin: 0 auto;
         width: fit-content;
     }
     
-    .water-glass-container {
-        width: 150px;
-        height: 250px;
+    .lottie-container {
+        width: 320px;
+        height: 400px;
+        margin: 0 auto;
     }
 }
