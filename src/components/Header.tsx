@@ -32,9 +32,10 @@ const Header: React.FC = () => {
                     <a href="#services" className="nav-link" onClick={closeMenu}>Services</a>
                     <a href="#products" className="nav-link" onClick={closeMenu}>Products</a>
                     <a href="#categories" className="nav-link" onClick={closeMenu}>Categories</a>
+                    <button className="contact-btn mobile-contact-btn">Contact us</button>
                 </nav>
 
-                <button className="contact-btn">Contact us</button>
+                <button className="contact-btn desktop-contact-btn">Contact us</button>
                 
                 {/* Hamburger Menu Button */}
                 <button 

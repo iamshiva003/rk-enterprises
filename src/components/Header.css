@@ -113,6 +113,28 @@
     color: white;
 }
 
+/* Mobile Contact Button */
+.mobile-contact-btn {
+    background: none;
+    border: none;
+    color: black;
+    font-size: 1rem;
+    font-weight: 400;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+    transition: all 0.3s ease;
+    padding: 0.75rem 1.5rem;
+    display: block;
+    width: 100%;
+    text-align: left;
+    cursor: pointer;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.mobile-contact-btn:hover {
+    color: #4a90e2;
+    background-color: rgba(74, 144, 226, 0.05);
+}
+
 /* Hamburger Menu Button */
 .hamburger-menu {
     display: none;
@@ -132,7 +154,8 @@
 }
 
 .hamburger-menu.active {
-    color: white;
+    color: #333;
+    transform: scale(1.1);
 }
 
 /* Responsive Design */
@@ -145,18 +168,31 @@
 @media (max-width: 768px) {
     .header-content {
         padding: 0 1rem;
+        justify-content: space-between;
     }
     
     .desktop-nav {
         display: none;
     }
     
+    .desktop-contact-btn {
+        display: none;
+    }
+    
     .hamburger-menu {
         display: block;
+        margin-left: auto;
     }
     
     .mobile-nav {
         display: flex;
+    }
+    
+    .logo {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 100;
     }
 }
 
@@ -217,12 +253,14 @@
 }
 
 /* Animation for mobile menu items */
-.mobile-nav .nav-link {
+.mobile-nav .nav-link,
+.mobile-nav .mobile-contact-btn {
     transform: translateX(10px);
     transition: all 0.3s ease;
 }
 
-.mobile-nav.active .nav-link {
+.mobile-nav.active .nav-link,
+.mobile-nav.active .mobile-contact-btn {
     transform: translateX(0);
 }
 
@@ -230,3 +268,4 @@
 .mobile-nav .nav-link:nth-child(2) { transition-delay: 0.1s; }
 .mobile-nav .nav-link:nth-child(3) { transition-delay: 0.15s; }
 .mobile-nav .nav-link:nth-child(4) { transition-delay: 0.2s; }
+.mobile-nav .mobile-contact-btn { transition-delay: 0.25s; }
