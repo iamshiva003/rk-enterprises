@@ -1,10 +1,12 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { FaBars, FaTimes } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 import './Header.css';
 
 const Header: React.FC = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
+    const mobileNavRef = useRef<HTMLElement>(null);
+    const hamburgerRef = useRef<HTMLButtonElement>(null);
 
     const toggleMenu = () => {
         setIsMenuOpen(!isMenuOpen);
@@ -13,6 +15,28 @@ const Header: React.FC = () => {
     const closeMenu = () => {
         setIsMenuOpen(false);
     };
+
+    useEffect(() => {
+        const handleClickOutside = (event: MouseEvent) => {
+            if (
+                isMenuOpen &&
+                mobileNavRef.current &&
+                !mobileNavRef.current.contains(event.target as Node) &&
+                hamburgerRef.current &&
+                !hamburgerRef.current.contains(event.target as Node)
+            ) {
+                closeMenu();
+            }
+        };
+
+        if (isMenuOpen) {
+            document.addEventListener('mousedown', handleClickOutside);
+        }
+
+        return () => {
+            document.removeEventListener('mousedown', handleClickOutside);
+        };
+    }, [isMenuOpen]);
 
     return (
         <header className="header">
@@ -28,7 +52,7 @@ const Header: React.FC = () => {
                 </nav>
 
                 {/* Mobile Navigation */}
-                <nav className={`navigation mobile-nav ${isMenuOpen ? 'active' : ''}`}>
+                <nav ref={mobileNavRef} className={`navigation mobile-nav ${isMenuOpen ? 'active' : ''}`}>
                     <Link to="/" className="nav-link" onClick={closeMenu}>Home</Link>
                     <Link to="/" className="nav-link" onClick={closeMenu}>Services</Link>
                     <Link to="/" className="nav-link" onClick={closeMenu}>Products</Link>
@@ -40,6 +64,7 @@ const Header: React.FC = () => {
                 
                 {/* Hamburger Menu Button */}
                 <button 
+                    ref={hamburgerRef}
                     className={`hamburger-menu ${isMenuOpen ? 'active' : ''}`}
                     onClick={toggleMenu}
                     aria-label="Toggle navigation menu"
