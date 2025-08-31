@@ -1,0 +1,254 @@
+/* Hero Section Styles */
+.hero {
+    background-color: white;
+    padding: 80px 20px;
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
+}
+
+.hero-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 60px;
+    align-items: center;
+}
+
+/* Left Section - Text and Button */
+.hero-text-section {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.hero-headline {
+    font-family: 'Georgia', serif;
+    font-size: 3.5rem;
+    font-weight: bold;
+    color: #1a1a1a;
+    line-height: 1.2;
+    margin: 0;
+}
+
+.hero-tagline {
+    font-size: 1.3rem;
+    color: #333;
+    line-height: 1.6;
+    font-weight: 400;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+    margin: 0;
+}
+
+.hero-cta-button {
+    background-color: #333;
+    color: white;
+    border: #333;
+    padding: 15px 30px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+    align-self: flex-start;
+    margin-left: 25%;
+    box-shadow: 0 3px 15px rgba(0, 0, 0, 0.2);
+    border: 2px solid #333;
+}
+
+.hero-cta-button:hover {
+    background-color: #555;
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+    border-color: #555;
+}
+
+.hero-cta-button:focus {
+    outline: none;
+    border-color: #333;
+}
+
+.hero-cta-button:active {
+    outline: none;
+    border-color: #333;
+}
+
+/* Right Section - Water Glass Visual */
+.hero-visual-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.water-glass-container {
+    position: relative;
+    width: 300px;
+    height: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.water-glass {
+    width: 120px;
+    height: 200px;
+    border: 3px solid #e0e0e0;
+    border-radius: 0 0 60px 60px;
+    position: relative;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.9), rgba(240, 248, 255, 0.8));
+    overflow: hidden;
+}
+
+.water-fill {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 70%;
+    background: linear-gradient(135deg, #87ceeb, #b0e0e6);
+    border-radius: 0 0 60px 60px;
+    animation: waterRipple 3s ease-in-out infinite;
+}
+
+.water-pour {
+    position: absolute;
+    top: -20px;
+    right: -10px;
+    width: 20px;
+    height: 40px;
+    background: linear-gradient(135deg, #87ceeb, #b0e0e6);
+    border-radius: 0 0 10px 10px;
+    animation: waterPour 2s ease-in-out infinite;
+}
+
+.water-splash {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    width: 15px;
+    height: 15px;
+    background: radial-gradient(circle, #87ceeb 30%, transparent 70%);
+    border-radius: 50%;
+    animation: waterSplash 2.5s ease-in-out infinite;
+}
+
+/* Water Animations */
+@keyframes waterRipple {
+    0%, 100% { transform: scaleY(1); }
+    50% { transform: scaleY(1.05); }
+}
+
+@keyframes waterPour {
+    0%, 100% { transform: translateY(0) scaleY(1); }
+    50% { transform: translateY(5px) scaleY(1.1); }
+}
+
+@keyframes waterSplash {
+    0%, 100% { opacity: 0.7; transform: scale(1); }
+    50% { opacity: 1; transform: scale(1.2); }
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .hero-container {
+        gap: 40px;
+    }
+    
+    .hero-headline {
+        font-size: 3rem;
+    }
+    
+    .water-glass-container {
+        width: 250px;
+        height: 350px;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero {
+        padding: 60px 15px;
+        min-height: 70vh;
+    }
+    
+    .hero-container {
+        grid-template-columns: 1fr;
+        gap: 40px;
+        text-align: center;
+        align-items: center;
+    }
+    
+    .hero-text-section {
+        order: 1;
+        gap: 25px;
+    }
+    
+    .hero-visual-section {
+        order: 2;
+        margin-top: 20px;
+    }
+    
+    .hero-headline {
+        font-size: 2.5rem;
+        text-align: center;
+    }
+    
+    .hero-tagline {
+        font-size: 1.1rem;
+        text-align: center;
+    }
+    
+    .hero-cta-button {
+        align-self: center;
+        margin-left: 0;
+        width: fit-content;
+    }
+    
+    .water-glass-container {
+        width: 200px;
+        height: 300px;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero {
+        padding: 40px 15px;
+        min-height: 60vh;
+    }
+    
+    .hero-container {
+        gap: 30px;
+    }
+    
+    .hero-text-section {
+        gap: 20px;
+    }
+    
+    .hero-headline {
+        font-size: 2rem;
+        text-align: center;
+        line-height: 1.1;
+    }
+    
+    .hero-tagline {
+        font-size: 1rem;
+        text-align: center;
+        line-height: 1.5;
+    }
+    
+    .hero-cta-button {
+        padding: 12px 25px;
+        font-size: 1rem;
+        align-self: center;
+        margin-left: 0;
+        width: fit-content;
+    }
+    
+    .water-glass-container {
+        width: 150px;
+        height: 250px;
+    }
+}
