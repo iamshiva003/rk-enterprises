@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { FaBars, FaTimes } from 'react-icons/fa';
+import { Link, useLocation } from 'react-router-dom';
 import './Header.css';
 
 const Header: React.FC = () => {
@@ -20,21 +21,22 @@ const Header: React.FC = () => {
                 
                 {/* Desktop Navigation */}
                 <nav className="navigation desktop-nav">
-                    <a href="#home" className="nav-link" onClick={closeMenu}>Home</a>
-                    <a href="#services" className="nav-link" onClick={closeMenu}>Services</a>
-                    <a href="#products" className="nav-link" onClick={closeMenu}>Products</a>
-                    <a href="#categories" className="nav-link" onClick={closeMenu}>Categories</a>
+                    <Link to="/" className="nav-link" onClick={closeMenu}>Home</Link>
+                    <Link to="/" className="nav-link" onClick={closeMenu}>Services</Link>
+                    <Link to="/" className="nav-link" onClick={closeMenu}>Products</Link>
+                    <Link to="/" className="nav-link" onClick={closeMenu}>Categories</Link>
                 </nav>
 
                 {/* Mobile Navigation */}
                 <nav className={`navigation mobile-nav ${isMenuOpen ? 'active' : ''}`}>
-                    <a href="#home" className="nav-link" onClick={closeMenu}>Home</a>
-                    <a href="#services" className="nav-link" onClick={closeMenu}>Services</a>
-                    <a href="#products" className="nav-link" onClick={closeMenu}>Products</a>
-                    <a href="#categories" className="nav-link" onClick={closeMenu}>Categories</a>
+                    <Link to="/" className="nav-link" onClick={closeMenu}>Home</Link>
+                    <Link to="/" className="nav-link" onClick={closeMenu}>Services</Link>
+                    <Link to="/" className="nav-link" onClick={closeMenu}>Products</Link>
+                    <Link to="/" className="nav-link" onClick={closeMenu}>Categories</Link>
+                    <Link to="/contact" className="contact-btn mobile-contact-btn" onClick={closeMenu}>Contact us</Link>
                 </nav>
 
-                <button className="contact-btn">Contact us</button>
+                <Link to="/contact" className="contact-btn desktop-contact-btn">Contact us</Link>
                 
                 {/* Hamburger Menu Button */}
                 <button 
