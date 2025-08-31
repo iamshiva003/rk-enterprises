@@ -2,7 +2,6 @@ import './App.css';
 import { Routes, Route } from 'react-router-dom';
 import Header from './components/Header';
 import Hero from './components/Hero';
-import ImageSection from './components/ImageSection';
 import FeaturesServices from './components/FeaturesServices';
 import ProductsTestimonials from './components/ProductsTestimonials';
 import Footer from './components/Footer';
@@ -17,7 +16,6 @@ function App() {
                 <Route path="/" element={
                     <>
                         <Hero />
-                        <ImageSection />
                         <FeaturesServices />
                         <ProductsTestimonials />
                     </>
