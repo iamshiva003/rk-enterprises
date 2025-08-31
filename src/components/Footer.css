@@ -28,6 +28,23 @@
     margin-bottom: 20px;
     color: white;
     font-family: 'Arial', sans-serif;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+.brand-logo:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 120px;
+    height: 2px;
+    background-color: white;
+    transition: width 0.3s ease;
+}
+
+.footer-column:hover .brand-logo:after {
+    width: 180px;
 }
 
 .copyright-info {
@@ -74,6 +91,23 @@
     margin-bottom: 20px;
     font-family: 'Arial', sans-serif;
     text-transform: none;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+.column-title:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 40px;
+    height: 2px;
+    background-color: white;
+    transition: width 0.3s ease;
+}
+
+.footer-column:hover .column-title:after {
+    width: 80px;
 }
 
 /* Footer Links */
