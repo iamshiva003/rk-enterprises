@@ -112,6 +112,22 @@
     color: #666;
 }
 
+/* Desktop Contact Button - Styled like the image */
+.desktop-contact-btn {
+    background-color: #333;
+    color: white;
+    font-weight: 500;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.desktop-contact-btn:hover {
+    background-color: #555;
+    color: white;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
 /* Mobile Contact Button */
 .mobile-contact-btn {
     background: none;
